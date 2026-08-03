@@ -62,7 +62,7 @@ export const postSignUp = [
 
       const hash = await bcrypt.hash(password, 10);
       await db.addUser({ first_name, last_name, username, hash });
-      res.redirect("/");
+      res.redirect("/login");
     } catch (err) {
       next(err);
     }
