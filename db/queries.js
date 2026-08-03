@@ -8,9 +8,7 @@ export async function getUserByUsername(username) {
 }
 
 export async function getUserById(id) {
-  const { rows } = await pool.query("SELECT * FROM users WHERE id=$1", [
-    username,
-  ]);
+  const { rows } = await pool.query("SELECT * FROM members WHERE id=$1", [id]);
   return rows[0];
 }
 
