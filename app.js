@@ -2,6 +2,8 @@ import express from "express";
 import session from "express-session";
 import connectPgSimple from "connect-pg-simple";
 import pool from "./db/pool.js";
+import passport from "passport";
+import "./config/passport.js";
 
 const app = express();
 app.set("views", "./views");
@@ -24,6 +26,9 @@ app.use(
     cookie: { maxAge: 24 * 60 * 60 * 24 },
   }),
 );
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get("/", (req, res) => {
   res.send("Hello world");
