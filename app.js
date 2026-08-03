@@ -4,6 +4,7 @@ import connectPgSimple from "connect-pg-simple";
 import pool from "./db/pool.js";
 import passport from "passport";
 import "./config/passport.js";
+import authRouter from "./routes/authRouter.js";
 
 const app = express();
 app.set("views", "./views");
@@ -33,6 +34,8 @@ app.use(passport.session());
 app.get("/", (req, res) => {
   res.send("Hello world");
 });
+
+app.use("/", authRouter);
 
 app.listen(3000, (err) => {
   if (err) console.error(err);

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+</head>
+
+<body>
+  <div>
+    <h1>Create an account</h1>
+    <form method="POST">
+      <%- include('partials/errors.ejs') %>
+      <div class="form-row">
+        <label for="first_name">FIRST NAME</label>
+        <input type="text" id="first_name" name="first_name" value="<%= formData.first_name || '' %>" required>
+      </div>
+      <div class="form-row">
+        <label for="last_name">LAST NAME</label>
+        <input type="text" id="last_name" name="last_name" value="<%= formData.last_name || '' %>" required>
+      </div>
+      <div class="form-row">
+        <label for="">USERNAME</label>
+        <input type="text" id="username" name="username" value="<%= formData.username || '' %>" required>
+      </div>
+      <div class="form-row">
+        <label for="password">PASSWORD</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-row">
+        <label for="confirm_password">CONFIRM PASSWORD</label>
+        <input type="password" id="confirm_password" required>
+      </div>
+      <button type="submit">Create Account</button>
+    </form>
+  </div>
+</body>
+
+</html>
