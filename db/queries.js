@@ -13,3 +13,10 @@ export async function getUserById(id) {
   ]);
   return rows[0];
 }
+
+export async function addUser(user) {
+  await pool.query(
+    "INSERT INTO members (username, first_name, last_name, hash) VALUES ($1, $2, $3, $4)",
+    [user.username, user.first_name, user.last_name, user.hash],
+  );
+}
