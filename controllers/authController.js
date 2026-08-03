@@ -1,6 +1,7 @@
 import { body, validationResult, matchedData } from "express-validator";
 import * as db from "../db/queries.js";
 import bcrypt from "bcryptjs";
+import passport from "passport";
 
 export function getSignUp(req, res) {
   res.render("sign-up", {
@@ -71,3 +72,10 @@ export const postSignUp = [
 export function getLogin(req, res) {
   res.render("login");
 }
+
+export const postLogin = [
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+  }),
+];
