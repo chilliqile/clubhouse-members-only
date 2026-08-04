@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add message</title>
+</head>
+
+<body>
+  <h1>Add message</h1>
+  <%- include('partials/errors.ejs') %>
+  <form method="post">
+    <div class="form-row">
+      <label for="title">TITLE</label>
+      <input type="text" id="title" name="'title" required>
+    </div>
+    <div class="form-row">
+      <label for="body">MESSAGE</label>
+      <textarea required></textarea>
+    </div>
+    <button type="submit">Add message</button>
+  </form>
+</body>
+
+</html>

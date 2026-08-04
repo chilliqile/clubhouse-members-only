@@ -16,3 +16,7 @@ export async function getIndex(req, res, next) {
     });
   }
 }
+
+export function getAddMessage(req, res) {
+  res.render("add-message");
+}
