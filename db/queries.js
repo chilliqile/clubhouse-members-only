@@ -18,3 +18,15 @@ export async function addUser(user) {
     [user.username, user.first_name, user.last_name, user.hash],
   );
 }
+
+export async function getPreviewMessages() {
+  const { rows } = await pool.query("SELECT id, title, body FROM messages");
+  return rows;
+}
+
+export async function getFullMessages() {
+  const { rows } = await pool.query(
+    "SELECT messages.id, title, body, username, posted_at FROM messages JOIN members ON messages.user_id=members.id",
+  );
+  return rows;
+}

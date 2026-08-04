@@ -5,6 +5,7 @@ import pool from "./db/pool.js";
 import passport from "passport";
 import "./config/passport.js";
 import authRouter from "./routes/authRouter.js";
+import messageRouter from "./routes/messageRouter.js";
 
 const app = express();
 app.set("views", "./views");
@@ -31,9 +32,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get("/", (req, res) => {
-  res.send("Hello world");
-});
+app.use("/", messageRouter);
 
 app.use("/", authRouter);
 
