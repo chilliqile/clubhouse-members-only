@@ -38,6 +38,10 @@ export async function addMessage(title, body, userId) {
   );
 }
 
+export async function deleteMessage(id) {
+  await pool.query("DELETE FROM messages WHERE id=$1", [id]);
+}
+
 export async function getMembership(id) {
   const { rows } = await pool.query(
     "SELECT membership_status FROM members WHERE id=$1",

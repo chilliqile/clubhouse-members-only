@@ -5,9 +5,11 @@ export async function getIndex(req, res, next) {
   const isLoggedIn = req.user;
   if (isLoggedIn) {
     const messages = await db.getFullMessages();
+    const isAdmin = await db.checkAdmin(req.user.id);
     res.render("index", {
       user: req.user,
       messages: messages,
+      isAdmin: isAdmin,
     });
   } else {
     const messages = await db.getPreviewMessages();
@@ -47,3 +49,8 @@ export const postAddMessage = [
     }
   },
 ];
+
+export async function deleteMessage(req, res) {
+  await db.deleteMessage(req.params.id);
+  res.redirect("/");
+}
