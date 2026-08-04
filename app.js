@@ -6,6 +6,7 @@ import passport from "passport";
 import "./config/passport.js";
 import authRouter from "./routes/authRouter.js";
 import messageRouter from "./routes/messageRouter.js";
+import codeRouter from "./routes/codeRouter.js";
 
 const app = express();
 app.set("views", "./views");
@@ -33,7 +34,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", messageRouter);
-
+app.use("/", codeRouter);
 app.use("/", authRouter);
 
 app.listen(3000, (err) => {
