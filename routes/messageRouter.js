@@ -4,5 +4,6 @@ const messageRouter = Router();
 
 messageRouter.get("/", messageController.getIndex);
 messageRouter.get("/add-message", messageController.getAddMessage);
+messageRouter.post("/add-message", messageController.postAddMessage);
 
 export default messageRouter;

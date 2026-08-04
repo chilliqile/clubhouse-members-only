@@ -30,3 +30,10 @@ export async function getFullMessages() {
   );
   return rows;
 }
+
+export async function addMessage(title, body, userId) {
+  await pool.query(
+    "INSERT INTO messages (title, body, user_id) VALUES ($1, $2, $3)",
+    [title, body, userId],
+  );
+}
