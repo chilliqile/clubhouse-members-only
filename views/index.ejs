@@ -29,12 +29,11 @@
     <div>
       <h2><%= message.title %></h2>
       <p><%= message.body %></p>
+      <p>Posted by <%= message.username %> - <%= message.posted_at %></p>
     </div>
     <% } else { %>
     <h2><%= message.title %></h2>
     <p><%= message.body %></p>
-    <p><%= message.posted_at %></p>
-    <p><%= message.username %></p>
     <% }}) %>
     <% } else { %>
     <p>There are no messages.</p>
