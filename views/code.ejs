@@ -9,13 +9,17 @@
 
 <body>
   <h1>Enter code</h1>
+  <%- include('partials/errors.ejs') %>
   <form method="post">
     <div class="form-row">
       <label for="code">CODE</label>
-      <input type="text" id="code" name="code " required>
+      <input type="text" id="code" name="code" required>
     </div>
     <button type="submit">Submit</button>
   </form>
+  <% if (locals.message) { %>
+  <p><%= message %></p>
+  <% } %>
 </body>
 
 </html>
