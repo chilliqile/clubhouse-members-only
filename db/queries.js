@@ -37,3 +37,29 @@ export async function addMessage(title, body, userId) {
     [title, body, userId],
   );
 }
+
+export async function getMembership(id) {
+  const { rows } = await pool.query(
+    "SELECT membership_status FROM members WHERE id=$1",
+    [id],
+  );
+  return rows[0].membership_status;
+}
+
+export async function upgradeMembership(id) {
+  await pool.query(
+    "UPDATE members SET membership_status = 'GOLD' WHERE id=$1",
+    [id],
+  );
+}
+
+export async function checkAdmin(id) {
+  const { rows } = await pool.query("SELECT admin FROM members WHERE id=$1", [
+    id,
+  ]);
+  return rows[0].admin;
+}
+
+export async function grantAdmin(id) {
+  await pool.query("UPDATE members SET admin = TRUE WHERE id=$1", [id]);
+}
