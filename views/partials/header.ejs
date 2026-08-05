@@ -1,0 +1,13 @@
+<header>
+  <h1><a href="/">Clubhouse</a></h1>
+  <% if (!locals.user) { %>
+  <div><a href="/login">Login</a></div>
+  <% } else { %>
+  <div>
+    <span><%= user.username %></span>
+    <a href="/add-message">Add message</a>
+    <a href="/codes">Codes</a>
+    <a href="/logout">Log Out</a>
+  </div>
+  <% } %>
+</header>
