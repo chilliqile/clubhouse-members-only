@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 0 36px;
+  height: 3.5rem;
+  border-bottom: 1px solid #e1e2e4;
+}
+
+.clubhouse-logo {
+  text-decoration: none;
+  font-size: 2rem;
+  color: #0052cc;
+}
+
+nav {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+
+nav a {
+  padding: 10px 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: #f2f5fa;
+  color: #444749;
+  border-radius: 1rem;
+}
+
+.username {
+  display: flex;
+  align-items: center;
+}
