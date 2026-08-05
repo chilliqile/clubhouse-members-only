@@ -7,6 +7,7 @@ import "./config/passport.js";
 import authRouter from "./routes/authRouter.js";
 import messageRouter from "./routes/messageRouter.js";
 import codeRouter from "./routes/codeRouter.js";
+import "dotenv/config";
 
 const app = express();
 app.set("views", "./views");
@@ -44,7 +45,8 @@ app.use((req, res, next) => {
   });
 });
 
-app.listen(3000, (err) => {
+const port = process.env.PORT || 3000;
+app.listen(port, (err) => {
   if (err) console.error(err);
-  console.log("Express app listening on port 3000!");
+  console.log(`Express app listening on port ${port}!`);
 });
