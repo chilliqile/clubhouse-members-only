@@ -10,19 +10,21 @@
 
 <body>
   <%- include('partials/header.ejs') %>
-  <h1>Add message</h1>
-  <%- include('partials/errors.ejs') %>
-  <form method="post">
-    <div class="form-row">
-      <label for="title">TITLE</label>
-      <input type="text" id="title" name="title" required>
-    </div>
-    <div class="form-row">
-      <label for="body">MESSAGE</label>
-      <textarea name="body" id="body" required></textarea>
-    </div>
-    <button type="submit">Add message</button>
-  </form>
+  <div class="form-card-container">
+    <h1>Add message</h1>
+    <%- include('partials/errors.ejs') %>
+    <form method="post">
+      <div class="form-row">
+        <label for="title">TITLE</label>
+        <input type="text" id="title" name="title" required>
+      </div>
+      <div class="form-row">
+        <label for="body">MESSAGE</label>
+        <textarea name="body" id="body" required></textarea>
+      </div>
+      <button type="submit">Add message</button>
+    </form>
+  </div>
 </body>
 
 </html>
