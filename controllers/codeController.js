@@ -2,7 +2,9 @@ import { body, validationResult } from "express-validator";
 import * as db from "../db/queries.js";
 
 export function getEnterCode(req, res) {
-  res.render("code");
+  res.render("code", {
+    user: req.user,
+  });
 }
 
 export const postEnterCode = [
