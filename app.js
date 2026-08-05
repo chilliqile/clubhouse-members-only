@@ -37,6 +37,10 @@ app.use("/", messageRouter);
 app.use("/", codeRouter);
 app.use("/", authRouter);
 
+app.use((req, res, next) => {
+  res.status(404).render("404");
+});
+
 app.listen(3000, (err) => {
   if (err) console.error(err);
   console.log("Express app listening on port 3000!");
