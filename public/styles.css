@@ -1,3 +1,10 @@
+:root {
+  --primary: #0052cc;
+  --secondary: #00b4ff;
+  --tertiary: #091e42;
+  --neutral: #f4f5f7;
+}
+
 *,
 *::before,
 *::after {
@@ -54,7 +61,7 @@ header {
 .clubhouse-logo {
   text-decoration: none;
   font-size: 2rem;
-  color: #0052cc;
+  color: var(--primary);
 }
 
 nav {
@@ -78,4 +85,40 @@ nav a:hover {
 .username {
   display: flex;
   align-items: center;
+}
+
+.form-card-container {
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid black;
+  padding: 40px 30px;
+  margin-inline: auto;
+}
+
+.form-card-container h1,
+.form-card-container p {
+  text-align: center;
+}
+
+.form-card-container p {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 2px solid black;
+}
+
+.form-card-container button {
+  width: 100%;
+  padding: 8px;
+  font-weight: 600;
+  color: white;
+  border: 2px solid black;
+  background-color: var(--primary);
 }
