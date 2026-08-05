@@ -1,3 +1,4 @@
+import "dotenv/config";
 import express from "express";
 import session from "express-session";
 import connectPgSimple from "connect-pg-simple";
@@ -7,7 +8,6 @@ import "./config/passport.js";
 import authRouter from "./routes/authRouter.js";
 import messageRouter from "./routes/messageRouter.js";
 import codeRouter from "./routes/codeRouter.js";
-import "dotenv/config";
 
 const app = express();
 app.set("views", "./views");
