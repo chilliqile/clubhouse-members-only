@@ -30,6 +30,7 @@ export const postEnterCode = [
         }
         res.render("code", {
           message: message,
+          user: req.user,
         });
       } else if (code === "ADMIN") {
         const isAdmin = await db.checkAdmin(req.user.id);
@@ -41,10 +42,12 @@ export const postEnterCode = [
         }
         res.render("code", {
           message: message,
+          user: req.user,
         });
       } else {
         res.status(400).render("code", {
           errors: [{ msg: "Invalid code" }],
+          user: req.user,
         });
       }
     } catch (err) {
