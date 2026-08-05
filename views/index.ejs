@@ -10,12 +10,12 @@
 
 <body>
   <%- include('partials/header.ejs') %>
-  <div>
+  <div class="message-board">
     <h1>Message Board</h1>
     <% if (messages.length > 0) { %>
     <% messages.forEach(message => { %>
     <% if (user) { %>
-    <div>
+    <div class="message-card">
       <h2><%= message.title %></h2>
       <p><%= message.body %></p>
       <p>Posted by <%= message.username %> - <%= message.posted_at %></p>
